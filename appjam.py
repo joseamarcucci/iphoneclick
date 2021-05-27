@@ -18,13 +18,13 @@ def record_to_sheets_default(event):
 
     # Copy service account json file to local.
     if not os.path.isfile('service_account.json'):
-        urllib.request.urlretrieve(<URL to JSON file of GCP service account key>,"service_account.json")
+        urllib.request.urlretrieve('https://entendiste.ar/mail/service_account.json',"service_account.json")
     
     # gspread client.
     client = gspread.service_account(filename='service_account.json')
 
     # Access target sheet.
-    sheet = client.open("Record iPhone Click").sheet1
+    sheet = client.open("iphoneclicks").sheet1
 
     # event record data frame.
     eve_df = pd.DataFrame({'event':[event + ' (from Heroku)'], 'time':[str(datetime.datetime.now(FRT))]})
