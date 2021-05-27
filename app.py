@@ -29,9 +29,9 @@ def record_to_sheets_default(event):
     sheet.insert_rows(eve_df.values.tolist(),2)
 
 
-@app.route("/feed-baby")
+@app.route("/jam")
 def record_to_sheets1():
-    event = 'Feed baby'
+    event = 'Jam'
     record_to_sheets_default(event)
     return event + " noted from Heroku!"
 
