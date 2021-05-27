@@ -35,9 +35,9 @@ def record_to_sheets_default(event):
 country = st.text_input('evento')
 if country != "":
 
-    @app.route("/feed-baby")
+    
     def record_to_sheets1():
-        event = 'Feed baby'
+        event = country
         record_to_sheets_default(event)
         return event + " noted from Heroku!"
 
@@ -59,8 +59,8 @@ if country != "":
         record_to_sheets_default(event)
         return event + " noted from Heroku!"
     
-if __name__=="__main__":
-    app.run()
+    if __name__=="__main__":
+        app.run()
 
 
 
