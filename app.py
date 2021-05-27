@@ -32,34 +32,33 @@ def record_to_sheets_default(event):
     # Record event to target sheet.
     sheet.insert_rows(eve_df.values.tolist(),2)
 
-country = st.text_input('evento')
-if country != "":
 
-    
-    def record_to_sheets1():
-        event = country
-        record_to_sheets_default(event)
-        return event + " noted from Heroku!"
 
-    @app.route("/baby-wakes-up")
-    def record_to_sheets2():
-        event = 'Baby wakes up'
-        record_to_sheets_default(event)
-        return event + " noted from Heroku!"
+  @app.route("/baby")  
+  def record_to_sheets1():
+      event = 'baby'
+      record_to_sheets_default(event)
+      return event + " noted from Heroku!"
+
+   @app.route("/baby-wakes-up")
+   def record_to_sheets2():
+       event = 'Baby wakes up'
+       record_to_sheets_default(event)
+       return event + " noted from Heroku!"
     
-    @app.route("/arrive-at-office")
-    def record_to_sheets3():
-        event = 'Arrived at office'
-        record_to_sheets_default(event)
-        return event + " noted from Heroku!"
+   @app.route("/arrive-at-office")
+   def record_to_sheets3():
+       event = 'Arrived at office'
+       record_to_sheets_default(event)
+       return event + " noted from Heroku!"
     
-    @app.route("/leave-office")
-    def record_to_sheets4():
-        event = 'Left office'
-        record_to_sheets_default(event)
-        return event + " noted from Heroku!"
+   @app.route("/leave-office")
+   def record_to_sheets4():
+       event = 'Left office'
+       record_to_sheets_default(event)
+       return event + " noted from Heroku!"
     
-    if __name__=="__main__":
+if __name__=="__main__":
         app.run()
 
 
